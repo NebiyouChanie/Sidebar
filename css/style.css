@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            font-family: 'Poppins';
+        }
+        .sidebar-toggle{
+            position: fixed;
+            top: 16px;
+            right: 32px;
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background:url(../img/image.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            z-index: -2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body::after{
+            content: '';
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .sidebar{
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            row-gap:  1rem;
+            padding: 16px;
+            transform: translate(-100%);
+            transition: transform 0.6s ease-in-out; 
+            background:linear-gradient(135deg,rgba(255, 255, 255, 0.3),rgba(0, 0, 0, 0)) ;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+
+        }
+        .show-sidebar{
+            transform: translate(0);
+        }
+        .sidebar-header{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            color: black;
+            font-weight: 700;
+        }
+        .close-btn{
+            background: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .close-btn:hover{
+            color: white;
+        }
+        .links a{
+            display: block;
+            padding: 8px 0;
+            font-size: 16px;
+            transition: all 0.6s ease;
+            color: white;
+        }
+        .links a:hover{
+            display: block;
+            padding: 8px 8px;
+            font-size: 16px;
+            color: rgb(25, 24, 24);
+        }
+        .social-links{
+            justify-content: center;
+            display: flex;
+            gap: 16px;
+        }
+        .social-links a{
+            color: rgb(255, 255, 255);
+        }
+        h1{
+            font-size: 60px;
+            color: white;
+            
+        }
+        #preloader{
+            height: 100vh;
+            width: 100%;
+            background: black;
+            position: fixed;
+            z-index: 100;
+        }
+
+        @media screen and (min-width: 776px) {
+        .sidebar {
+            width: 300px;
+        }
+        h1{
+            font-size: 150px;
+        }
+        }
